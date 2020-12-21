@@ -5,17 +5,36 @@
   "main": "demo.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha -r ./node_modules/ts-node/register --watch test/**/*.js --colors",
-    "dev": "./node_modules/.bin/ts-node-dev --respawn --transpileOnly src/index.ts"
+    "dev": "./node_modules/.bin/ts-node-dev --respawn --transpileOnly src/index.ts",
+    "start-node": "yarn build:live",
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "build:tsc": "tsc -p .",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "build:start": "nodemon --watch 'scripts/**/*.js' --exec 'node' scripts/start.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^12.7.2",
+    "@types/react": "^17.0.0",
     "chai": "^4.2.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^4.5.0",
     "mocha": "^6.2.0",
     "mochawesome": "^4.1.0",
+    "nodemon": "^2.0.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "ts-loader": "^8.0.12",
     "ts-node": "^8.3.0",
     "ts-node-dev": "^1.0.0-pre.41",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "webpack": "^5.10.3",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@types/react-dom": "^17.0.0"
   }
 }

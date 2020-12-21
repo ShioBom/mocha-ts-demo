@@ -1,6 +1,6 @@
 import { stringify } from "querystring";
 
-export class Kata {
+export class Utils {
     /**
      * revrot 将字符串切成指定大小的子字符串，如果最后一个块长度不足sz，则抛弃该块，如果子字符串的数字和能被2整除，则翻转该子字符串，否则该子字符串左移一位
      * 对所有的子字符串做此操作后，拼接起来，返回拼接后的字符串。
